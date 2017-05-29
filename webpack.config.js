@@ -30,7 +30,6 @@ const common = merge([
 				chunks: ['index', 'common'],
 				template: PATHS.source + '/static/index.html'
 			}),
-
 			new webpack.optimize.CommonsChunkPlugin({
 				name: 'common'
 			}),
@@ -38,9 +37,19 @@ const common = merge([
 				$:'jquery',
 				jQuery: 'jquery'
 			})
-
-		]
-	},	
+		],
+		module: {
+			rules: [
+			  {
+			  	include: [
+						path.resolve(__dirname, "src"),
+			  	],
+			  	test: /\.js$/,
+			  	use: ['babel-loader'],
+			  }	
+		  ]
+		}	
+	},
 	images()
 ]);
 
