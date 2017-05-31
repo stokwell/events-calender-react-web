@@ -10,7 +10,6 @@ module.exports = function (paths) {
 			  		'css-loader'
 			  	]
 				}
-
 			]
 		}
 	};

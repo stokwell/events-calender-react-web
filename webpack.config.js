@@ -59,6 +59,7 @@ module.exports = function(env) {
 			common,
 			extractCSS(),
 			uglifyJS(),
+			
 		]);
 	}
 	if (env === 'development'){
@@ -66,7 +67,7 @@ module.exports = function(env) {
 			common, 
 			devserver(),
 			sass(),
-			css( )
+			css()
 		])	
 	}
 };
