@@ -65,9 +65,9 @@ module.exports = function(env) {
 	if (env === 'development'){
 		return merge([
 			common, 
-			devserver(),
-			sass(),
-			css()
+			devserver(),			
+			css(),
+			sass()
 		])	
 	}
 };

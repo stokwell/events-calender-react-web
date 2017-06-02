@@ -1,7 +1,7 @@
-const initialState = {
-  user: 'Unknown User'
-};
+import { combineReducers } from 'redux'
+import eventsReducer from './eventsReducer'
 
-export default function rootReducer(state = initialState) {
-  return state;
-}
+
+export default combineReducers({
+  eventsReducer 
+})

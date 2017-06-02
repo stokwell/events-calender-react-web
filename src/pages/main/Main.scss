@@ -1,0 +1,92 @@
+input {
+	outline: none;
+}
+
+button {
+	outline: none;
+}
+
+
+
+.header {
+    padding: 20px 20px 17px 15px;
+}
+
+.header img {
+    width: 275px;	
+}
+
+.container--gray {
+    background-color: #ddd;
+    padding:5px 20px;
+    vertical-align: middle;
+}
+
+.container--gray h2 {
+	color: #333;
+	text-transform: uppercase;
+	font-size: 19px;
+}
+
+.container--nav {
+	height: 47px;
+	background: #6b9e1f;
+}
+
+footer {
+	min-height: 300px;
+	background: #454545;
+	display:flex !important;
+	justify-content: center;
+	padding:50px !important;
+
+	h3 {
+		color: #999;
+		font-size: 21px;
+        line-height: 28px;
+        margin: 30px 0;
+        text-align: center;
+	}
+
+	button {
+		background: none;
+		color: white;
+		border: 1px solid white;
+		padding: 10px;
+		font-size: 15px;
+		min-width: 150px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	input {
+		width: 300px;
+		padding:10px;
+		font-size: 15px;
+		border:1px solid white;
+		vertical-align: center;
+	}
+}
+
+.container--events {
+	min-height:1000px;
+	display: flex;
+	justify-content: center;
+	padding: 0 50px;
+}
+
+.events--list {
+	margin-top: 50px;
+	width:100%;
+    
+}
+
+
+.event--box {
+   border:1px solid black;
+   min-height: 60d0px;
+   padding: 20px;
+   margin: 30px 0;
+}
