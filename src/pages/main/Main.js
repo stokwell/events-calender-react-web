@@ -1,13 +1,22 @@
 import React, { Component, PropTypes } from 'react';
-import { connect } from  'react-redux';
 
 import EventsList from '../../components/EventsList';
-import Footer from '../../components/Footer';
+import SubscribingForm from '../../components/SubscribingForm';
 import Header from '../../components/Header';
+
+import { connect } from  'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchEvents } from '../../actions/eventsAction';
+
 
 import './Main.scss';
 
 class Main extends Component {
+  componentDidMount(){
+    this.props.fetchEvents()
+  }
+
+  
   render() {
     return (
   		<div>
@@ -17,9 +26,11 @@ class Main extends Component {
   		  </div>
         <div className="container container--nav">           
         </div>
-        <EventsList events={this.props.events}/>
 
-        <Footer/>
+        
+        <EventsList events={this.props.events.events}/>
+        
+        <SubscribingForm />
   		</div>
     ) 
   }
@@ -31,5 +42,9 @@ function mapStateToProps(state) {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({fetchEvents}, dispatch)
+}
 
-export default connect(mapStateToProps)(Main)
+export default connect(mapStateToProps, mapDispatchToProps)(Main)
+

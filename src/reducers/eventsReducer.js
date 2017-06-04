@@ -1,21 +1,14 @@
-const initialState = [
-  { 
-  	id: 1,
-    title: 'Seminar'
-  },
-  {
-  	id: 2,
-  	title: 'Vorlesung'
-  },
-  {
-  	id:3,
-  	title: 'Vortrag'
-  }
- 
-]
+const initialState = {
+  events: []
+}
    
+export default function eventsReducer (state = initialState, action) {
+  switch(action.type) {
+    default:
+      return state
 
+    case 'FETCH_EVENTS':
+      return { ...state, events: action.payload }
 
-export default function eventsReducer (state = initialState) {
-  return state
+  }	
 }

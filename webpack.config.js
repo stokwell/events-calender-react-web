@@ -18,14 +18,15 @@ const PATHS = {
 const common = merge([
 	{
 		entry: {
-			'index': PATHS.source + '/static/index.js'
+			index: PATHS.source + '/static/index.js'
 		},
 		output: {
 			path: PATHS.build,
-			filename: 'js/[name].js'
+			filename: 'js/[name].js',
+			publicPath: '/'
 		},
 		plugins: [
-      new HtmlWebpackPlugin({
+            new HtmlWebpackPlugin({
 				filename: 'index.html',
 				chunks: ['index', 'common'],
 				template: PATHS.source + '/static/index.html'
@@ -36,13 +37,14 @@ const common = merge([
 			new webpack.ProvidePlugin({
 				$:'jquery',
 				jQuery: 'jquery'
-			})
+			}),
+			new webpack.HotModuleReplacementPlugin(),
 		],
 		module: {
 			rules: [
 			  {
 			  	include: [
-						path.resolve(__dirname, "src"),
+					path.resolve(__dirname, "src"),
 			  	],
 			  	test: /\.js$/,
 			  	use: ['babel-loader'],

@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 const Event = (props) =>  (
   <li className="event--box"> 
-    {props.event.title}
+    <p>{props.event.title}</p>
+    <p>{props.event.description}</p>
   </li>
-
 )
 
-export default Event
+export default Event;
