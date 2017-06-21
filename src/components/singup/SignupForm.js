@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom'
 
 
 
@@ -12,7 +13,7 @@ class SignupForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      name: '',
       email: '',
       password: '',
       passwordConfirmation: '',
@@ -28,7 +29,12 @@ class SignupForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.userSignUpRequest(this.state);
+    this.props.userSignUpRequest(this.state).then(
+      () => {
+        this.props.history.push('/dashboard');
+      }
+
+    )
   }
 
 
@@ -39,10 +45,10 @@ class SignupForm extends Component {
         <div className="form-group">
           <label className="control-label">Username</label>
           <input
-            value={this.state.username}
+            value={this.state.name}
             onChange={this.onChange}
             type="text"
-            name="username"
+            name="name"
             className="form-control"
           />
         </div>
@@ -90,8 +96,4 @@ class SignupForm extends Component {
   }
 }
 
-SignupForm.propTypes = {
-  userSignUpRequest: PropTypes.func.isRequired
-}
-
-export default SignupForm;
+export default withRouter(SignupForm);
