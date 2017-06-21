@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --env development",
     "build": "webpack --env production",
     "server": "static build",
-    "own-server": "node server.js" 
+    "own-server": "node server.js"
   },
   "devDependencies": {
     "axios": "^0.16.1",
@@ -38,8 +38,10 @@
     "babel-polyfill": "^6.23.0",
     "babel-runtime": "^6.23.0",
     "normalize.css": "^7.0.0",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-dropzone": "^3.13.2",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",

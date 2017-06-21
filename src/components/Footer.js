@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Footer = () => (
+
+
 	<footer>
 	    <div className="container">
            <h3>Newsletters abonieren</h3>
@@ -13,6 +15,6 @@ const Footer = () => (
 	    </div>
 	</footer>
 
-) 
+)
 
 export default Footer;

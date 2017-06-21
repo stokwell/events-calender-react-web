@@ -16,7 +16,7 @@ class Main extends Component {
     this.props.fetchEvents()
   }
 
-  
+
   render() {
     return (
   		<div>
@@ -24,15 +24,14 @@ class Main extends Component {
   		  <div className="container container--gray">
   		    <h2>Veranstaltungskalender</h2>
   		  </div>
-        <div className="container container--nav">           
+        <div className="container container--nav">
         </div>
 
-        
         <EventsList events={this.props.events.events}/>
-        
+
         <SubscribingForm />
   		</div>
-    ) 
+    )
   }
 }
 

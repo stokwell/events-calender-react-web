@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import Main from '../pages/main/Main';
-import Login from '../pages/login/Login';
+import Login from '../components/login/Login';
 
 import Dashboard from '../components/Dashboard';
-import Eventsboard from '../components/Eventsboard'
+import Eventsboard from '../components/Eventsboard';
+import SignupPage from '../components/singup/SignupPage';
 
 import { Switch, Route } from 'react-router-dom'
 
@@ -17,6 +18,7 @@ export default class App extends Component {
             <Route exact path="/" component={Main}></Route>
             <Route path="/anmelden" component={Login}></Route>
             <Route path="/dashboard" component={Dashboard} />
+            <Route path="/signup" component={SignupPage} />
       </Switch>
     </div>
     )
