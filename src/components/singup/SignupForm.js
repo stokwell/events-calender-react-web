@@ -7,7 +7,8 @@ import { withRouter } from 'react-router-dom'
 class SignupForm extends Component {
 
   static propTypes = {
-    userSignUpRequest: PropTypes.func.isRequired
+    userSignUpRequest: PropTypes.func.isRequired,
+    addFlashMessage: PropTypes.func.isRequired
   }
 
   constructor(props) {
@@ -31,6 +32,11 @@ class SignupForm extends Component {
     e.preventDefault();
     this.props.userSignUpRequest(this.state).then(
       () => {
+        this.props.addFlashMessage({
+          type: 'success',
+          text: 'You signed up successefully. Welcome!'
+
+        })
         this.props.history.push('/dashboard');
       }
 
