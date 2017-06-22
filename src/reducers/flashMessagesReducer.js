@@ -1,7 +1,8 @@
-import { ADD_FLASH_MESSAGE } from '../actions/constants'
-import shortid from 'shortid'
+import { ADD_FLASH_MESSAGE, DELETE_FLASH_MESSAGE } from '../actions/constants';
+import shortid from 'shortid';
 
-export default function flashMessagesReducer (state = {}, action){
+
+export default function flashMessagesReducer (state = [], action){
   switch(action.type){
     case ADD_FLASH_MESSAGE:
       return [
@@ -11,9 +12,10 @@ export default function flashMessagesReducer (state = {}, action){
           type: action.message.type,
           text: action.message.text
         }
+      ];
 
-      ]
-
+    case DELETE_FLASH_MESSAGE:
+      return state.filter(message => message.id !== action.id);﻿
 
     default: return state
   }

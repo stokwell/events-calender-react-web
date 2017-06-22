@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import EventsList from '../../components/EventsList';
 import SubscribingForm from '../../components/SubscribingForm';
 import Header from '../../components/Header';
+import FlashMessagesList from '../../components/flash/FlashMessagesList';
 
 import { connect } from  'react-redux';
 import { bindActionCreators } from 'redux';
@@ -26,6 +27,7 @@ class Main extends Component {
   		  </div>
         <div className="container container--nav">
         </div>
+        <FlashMessagesList />
 
         <EventsList events={this.props.events.events}/>
 
