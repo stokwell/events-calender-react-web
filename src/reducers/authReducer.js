@@ -10,7 +10,7 @@ export default function authReducer(state = initialState, action) {
   switch(action.type) {
     case SET_CURRENT_USER:
       return {
-        isAthenticated: !isEmpty(action.user),
+        isAuthenticated: !isEmpty(action.user),
         user: action.user
       };
 
