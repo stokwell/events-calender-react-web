@@ -48,9 +48,14 @@ const common = merge([
 			  	],
 			  	test: /\.js$/,
 			  	use: ['babel-loader'],
-			  }	
+			  }
 		  ]
-		}	
+		},
+		node: {
+			net: 'empty',
+			dns: 'empty'
+
+		}
 	},
 	images()
 ]);
@@ -61,15 +66,15 @@ module.exports = function(env) {
 			common,
 			extractCSS(),
 			uglifyJS(),
-			
+
 		]);
 	}
 	if (env === 'development'){
 		return merge([
-			common, 
-			devserver(),			
+			common,
+			devserver(),
 			css(),
 			sass()
-		])	
+		])
 	}
 };

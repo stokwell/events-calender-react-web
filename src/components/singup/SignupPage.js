@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { userSignUpRequest } from '../../actions/signupActions'
 import { addFlashMessage } from '../../actions/flashMessages'
+import { Link } from 'react-router-dom'
 
 import SignupForm from './SignupForm';
 
@@ -20,7 +21,10 @@ class SignupPage extends Component {
     const { userSignUpRequest, addFlashMessage } = this.props
     return (
       <div className="signup">
-        <SignupForm userSignUpRequest={userSignUpRequest} addFlashMessage={addFlashMessage}/>
+        <div>
+          <SignupForm userSignUpRequest={userSignUpRequest} addFlashMessage={addFlashMessage}/>
+          <Link to="/login">Sign In</Link>
+        </div>
       </div>
     );
   }
